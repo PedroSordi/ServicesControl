@@ -33,7 +33,7 @@ public class Login extends Activity {
 				if (campoUsuario.getText().toString().equals("admin")) {
 					Toast.makeText(Login.this, "logado com sucesso",
 							Toast.LENGTH_LONG).show();
-					Intent i = new Intent(Login.this, TelaInicial.class);
+					Intent i = new Intent(Login.this, TelaInicialAtendente.class);
 					startActivity(i);
 					finish();
 				} else {
