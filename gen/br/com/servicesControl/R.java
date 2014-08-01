@@ -16,21 +16,20 @@ public final class R {
     public static final class id {
         public static final int campo_senha=0x7f060001;
         public static final int campo_usuario=0x7f060000;
-        public static final int cliente=0x7f060004;
         public static final int entrar=0x7f060002;
-        public static final int funcionario=0x7f060007;
-        public static final int pedido=0x7f060003;
-        public static final int produto=0x7f060006;
-        public static final int servico=0x7f060005;
+        public static final int m_pedido_cliente=0x7f060005;
+        public static final int m_pedido_datainicio=0x7f060007;
+        public static final int m_pedido_placa=0x7f060006;
+        public static final int m_pedido_prioridade=0x7f060004;
+        public static final int m_pedidos_lista=0x7f060008;
+        public static final int novo=0x7f060003;
     }
     public static final class layout {
-        public static final int cadastrar_pedido=0x7f030000;
-        public static final int item_lista_pedidos_mecanico=0x7f030001;
-        public static final int item_selecionar_lista_servicos=0x7f030002;
-        public static final int lista_pedidos_atendente=0x7f030003;
-        public static final int lista_pedidos_mecanico=0x7f030004;
-        public static final int login=0x7f030005;
-        public static final int tela_inicial_atendente=0x7f030006;
+        public static final int barra_titulo=0x7f030000;
+        public static final int login=0x7f030001;
+        public static final int m_item_pedidos=0x7f030002;
+        public static final int m_pedidos=0x7f030003;
+        public static final int novo_funcionario=0x7f030004;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

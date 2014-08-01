@@ -5,25 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="#00ffff"
-        android:gravity="center" >
-
-        <ImageView
-            android:padding="5dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_launcher" />
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Nome do app"
-            android:textSize="22sp" />
-    </LinearLayout>
+    <include layout="@layout/barra_titulo" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -75,16 +57,35 @@
             </EditText>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/entrar"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#000fff"
-            android:padding="10dp"
-            android:text="Logar"
-            android:textColor="#fff" />
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/entrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:background="#00A0B0"
+                android:padding="10dp"
+                android:text="Logar"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/novo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#2c71b5"
+                android:padding="10dp"
+                android:text="Novo"
+                android:textColor="#fff" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
