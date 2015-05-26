@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/botao_pedido"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ecedef"
+        android:drawableLeft="@drawable/pedido"
+        android:paddingLeft="10dp"
+        android:text="Pedido"
+        android:layout_margin="4dp"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/botao_cliente"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="#ecedef"
+                android:drawableLeft="@drawable/cliente"
+                android:paddingLeft="10dp"
+                android:layout_margin="2dp"
+                android:text="Cliente" />
+
+            <Button
+                android:id="@+id/botao_servico"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="#ecedef"
+                android:drawableLeft="@drawable/servico"
+                android:paddingLeft="10dp"
+                android:layout_margin="2dp"
+                android:text="Servico" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/botao_produto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="#ecedef"
+                android:drawableLeft="@drawable/produto"
+                android:paddingLeft="10dp"
+                android:layout_margin="2dp"
+                android:text="Produto" />
+
+            <Button
+                android:id="@+id/botao_funcionario"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="#ecedef"
+                android:drawableLeft="@drawable/funcionario"
+                android:paddingLeft="10dp"
+                android:layout_margin="2dp"
+                android:text="Funcionario"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

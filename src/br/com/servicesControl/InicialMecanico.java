@@ -2,44 +2,59 @@ package br.com.servicesControl;
 
 import java.util.List;
 
-import br.com.servicesControl.controller.MPedidosAdapter;
-import br.com.servicesControl.entity.Pedido;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import br.com.serviceControl.dao.PedidoDAO;
+import br.com.servicesControl.entity.Pedido;
 
 public class InicialMecanico extends Activity {
 
-	private MPedidosAdapter pedidosAdapter;
-	private List<Pedido> listaPedidosTeste;
+	private InicialMecanicoAdapter adapter;
+	private List<Pedido> listaPedidos;
 	private ListView listaView;
+	private TextView titulo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.m_pedidos);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.inicial_mecanico);
 
-		adicionarItensFakes();
+		titulo = (TextView) findViewById(R.id.campo_titulo);
+		titulo.setText("Pedidos");
+		findViewById(R.id.menu).setVisibility(View.INVISIBLE);
+
+		criarListView();
+		listaView.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Pedido pedido = (Pedido) adapter.getItem(position);
+				Toast.makeText(getApplicationContext(), pedido.toString(),
+						Toast.LENGTH_LONG).show();
+				Intent i = new Intent(getApplicationContext(),
+						PedidoMecanico.class);
+				i.putExtra("pedido", pedido);
+				startActivity(i);
+			}
+		});
 	}
 
 	private void criarListView() {
-		listaView = (ListView) findViewById(R.id.m_pedidos_lista);
+		PedidoDAO pDao = new PedidoDAO(InicialMecanico.this);
+		listaPedidos = pDao.getAll();
+		listaView = (ListView) findViewById(R.id.lista_pedido);
 
-		pedidosAdapter = new MPedidosAdapter(listaPedidosTeste,
-				InicialMecanico.this);
-		listaView.setAdapter(pedidosAdapter);
+		adapter = new InicialMecanicoAdapter(listaPedidos, InicialMecanico.this);
+		listaView.setAdapter(adapter);
 	}
 
-	private void adicionarItensFakes() {
-		Pedido p = new Pedido("123", "Nome1", "data1", 1);
-		Pedido p2 = new Pedido("456", "Nome2", "data2", 2);
-		Pedido p3 = new Pedido("789", "Nome3", "data3", 3);
-
-		listaPedidosTeste.add(p);
-		listaPedidosTeste.add(p2);
-		listaPedidosTeste.add(p3);
-
-		criarListView();
-	}
 }

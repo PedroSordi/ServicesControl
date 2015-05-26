@@ -1,22 +1,57 @@
 package br.com.servicesControl.entity;
 
-public class Cliente {
-	private String nome;
-	private String cpf;
-	private String telefone;
-	private Cargo cargo;
+import java.io.Serializable;
+import java.util.Collection;
 
-	public Cliente(String nome, String cpf, String telefone, Cargo cargo,
-			String usuario, String senha) {
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable(tableName = "cliente")
+public class Cliente implements Serializable {
+	private static final long serialVersionUID = -7616556808131544088L;
+	@DatabaseField(generatedId = true)
+	private long id;
+	@DatabaseField
+	private String nome;
+	@DatabaseField
+	private String cpf;
+	@DatabaseField
+	private String telefone;
+//	@ForeignCollectionField(eager = true)
+//	private Collection<Pedido> pedidos;
+
+	public Cliente(String nome) {
+		this.nome = nome;
+	}
+
+	public Cliente(long id, String nome, String cpf, String telefone,
+			Collection<Pedido> pedidos) {
 		super();
+		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;
-		this.cargo = cargo;
+//		this.pedidos = pedidos;
+	}
+	
+
+	public Cliente(String nome, String cpf, String telefone) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
 	}
 
 	public Cliente() {
+		super();
+	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -43,12 +78,16 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
-	public Cargo getCargo() {
-		return cargo;
-	}
+//	public Collection<Pedido> getPedidos() {
+//		return pedidos;
+//	}
+//
+//	public void setPedidos(Collection<Pedido> pedidos) {
+//		this.pedidos = pedidos;
+//	}
 
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
+	@Override
+	public String toString() {
+		return getId() + " - " + getNome();
 	}
-
 }

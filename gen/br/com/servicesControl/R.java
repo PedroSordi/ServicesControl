@@ -8,28 +8,93 @@
 package br.com.servicesControl;
 
 public final class R {
+    public static final class array {
+        public static final int cargos_array=0x7f050000;
+    }
     public static final class attr {
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int cliente=0x7f020000;
+        public static final int funcionario=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int pedido=0x7f020003;
+        public static final int produto=0x7f020004;
+        public static final int servico=0x7f020005;
     }
     public static final class id {
-        public static final int campo_senha=0x7f060001;
-        public static final int campo_usuario=0x7f060000;
-        public static final int entrar=0x7f060002;
-        public static final int m_pedido_cliente=0x7f060005;
-        public static final int m_pedido_datainicio=0x7f060007;
-        public static final int m_pedido_placa=0x7f060006;
-        public static final int m_pedido_prioridade=0x7f060004;
-        public static final int m_pedidos_lista=0x7f060008;
-        public static final int novo=0x7f060003;
+        public static final int adicionar_produto=0x7f07002c;
+        public static final int adicionar_servico=0x7f07002b;
+        public static final int botao_cancelar=0x7f07001c;
+        public static final int botao_cliente=0x7f070001;
+        public static final int botao_funcionario=0x7f070004;
+        public static final int botao_ok=0x7f070030;
+        public static final int botao_pedido=0x7f070000;
+        public static final int botao_produto=0x7f070003;
+        public static final int botao_salvar=0x7f07001d;
+        public static final int botao_servico=0x7f070002;
+        public static final int campo_cpf=0x7f07001a;
+        public static final int campo_descricao=0x7f070021;
+        public static final int campo_marca=0x7f070024;
+        public static final int campo_nome=0x7f070019;
+        public static final int campo_placa=0x7f070022;
+        public static final int campo_quantidade=0x7f070026;
+        public static final int campo_senha=0x7f070017;
+        public static final int campo_senhanovamente=0x7f07001e;
+        public static final int campo_telefone=0x7f07001b;
+        public static final int campo_titulo=0x7f070005;
+        public static final int campo_valor=0x7f070025;
+        public static final int cargos_spinner=0x7f07001f;
+        public static final int cliente=0x7f070027;
+        public static final int cliente_nome=0x7f070008;
+        public static final int clientes_spinner=0x7f070020;
+        public static final int data_inicio=0x7f07000d;
+        public static final int deletar=0x7f07000a;
+        public static final int descricao=0x7f070029;
+        public static final int editar=0x7f070009;
+        public static final int entrar=0x7f070018;
+        public static final int finalizar_pedido=0x7f07002d;
+        public static final int funcionario_nome=0x7f07000b;
+        public static final int funcionarios_spinner=0x7f070016;
+        public static final int lista_cliente=0x7f070013;
+        public static final int lista_pedido=0x7f070007;
+        public static final int lista_produto=0x7f070014;
+        public static final int lista_servico=0x7f070015;
+        public static final int listagem=0x7f07002a;
+        public static final int menu=0x7f070006;
+        public static final int placa=0x7f070028;
+        public static final int placa_veiculo=0x7f07000e;
+        public static final int prioridade=0x7f07000c;
+        public static final int produto_nome=0x7f07000f;
+        public static final int produto_preco=0x7f070011;
+        public static final int produto_quantidade=0x7f070010;
+        public static final int produtos_spinner=0x7f07002e;
+        public static final int quantidade=0x7f07002f;
+        public static final int rating_prioridade=0x7f070023;
+        public static final int servico_nome=0x7f070012;
+        public static final int servicos_spinner=0x7f070031;
     }
     public static final class layout {
-        public static final int barra_titulo=0x7f030000;
-        public static final int login=0x7f030001;
-        public static final int m_item_pedidos=0x7f030002;
-        public static final int m_pedidos=0x7f030003;
-        public static final int novo_funcionario=0x7f030004;
+        public static final int atendente_menu=0x7f030000;
+        public static final int barra_titulo=0x7f030001;
+        public static final int inicial_mecanico=0x7f030002;
+        public static final int item_cliente=0x7f030003;
+        public static final int item_funcionario=0x7f030004;
+        public static final int item_pedido_aberto=0x7f030005;
+        public static final int item_produto=0x7f030006;
+        public static final int item_servico=0x7f030007;
+        public static final int listar_cliente=0x7f030008;
+        public static final int listar_funcionario=0x7f030009;
+        public static final int listar_produto=0x7f03000a;
+        public static final int listar_servico=0x7f03000b;
+        public static final int login=0x7f03000c;
+        public static final int novo_cliente=0x7f03000d;
+        public static final int novo_funcionario=0x7f03000e;
+        public static final int novo_pedido=0x7f03000f;
+        public static final int novo_produto=0x7f030010;
+        public static final int novo_servico=0x7f030011;
+        public static final int pedido_mecanico=0x7f030012;
+        public static final int popup_produto=0x7f030013;
+        public static final int popup_servico=0x7f030014;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
@@ -57,10 +122,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f060001;
     }
 }

@@ -1,38 +1,68 @@
 package br.com.servicesControl.entity;
 
+import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
-public class Pedido {
-	private String placa;
-	private String nome;
-	private List<Produto> listaProdutos;
-	private Cliente cliente;
-	private List<Servico> servico;
-	private Funcionario mecanico;
-	private String dataInicio;
-	private String dataFim;
-	private int prioridade;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
+import com.j256.ormlite.table.DatabaseTable;
 
-	// Teste lista
-	public Pedido(String placa, String nome, String dataInicio, int prioridade) {
-		this.placa = placa;
-		this.nome = nome;
-		this.dataInicio = dataInicio;
-		this.prioridade = prioridade;
+@DatabaseTable(tableName = "pedido")
+public class Pedido implements Serializable {
+	public final static String ID_FIELD_NAME = "id";
+	
+	private static final long serialVersionUID = -9143976339604386459L;
+	@DatabaseField(generatedId = true, columnName = ID_FIELD_NAME)
+	private long id;
+	@DatabaseField
+	private String placa;
+	@DatabaseField
+	private String descricao;
+	@DatabaseField(foreign = true, foreignAutoRefresh = true)
+	private Cliente cliente;
+	@DatabaseField
+	private Date dataInicio;
+	@DatabaseField
+	private String dataFim;
+	@DatabaseField
+	private int prioridade;
+	@ForeignCollectionField
+	private List<PedidoProduto> pedidoProduto;
+	@ForeignCollectionField
+	private List<PedidoServico> pedidoServico;
+
+	public Pedido() {
+		super();
 	}
 
-	public Pedido(String placa, List<Produto> listaProdutos, Cliente cliente,
-			List<Servico> servico, Funcionario mecanico, String dataInicio,
-			String dataFim, int prioridade) {
+	public Pedido(long id, String placa, String descricao, Cliente cliente,
+			Date dataInicio, String dataFim, int prioridade) {
 		super();
+		this.id = id;
 		this.placa = placa;
-		this.listaProdutos = listaProdutos;
+		this.descricao = descricao;
 		this.cliente = cliente;
-		this.servico = servico;
-		this.mecanico = mecanico;
 		this.dataInicio = dataInicio;
 		this.dataFim = dataFim;
 		this.prioridade = prioridade;
+	}
+
+	public Pedido(String placa, String descricao, Cliente cliente,
+			int prioridade) {
+		this.placa = placa;
+		this.descricao = descricao;
+		this.cliente = cliente;
+		this.prioridade = prioridade;
+		this.dataInicio = new Date();
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getPlaca() {
@@ -43,12 +73,12 @@ public class Pedido {
 		this.placa = placa;
 	}
 
-	public List<Produto> getListaProdutos() {
-		return listaProdutos;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setListaProdutos(List<Produto> listaProdutos) {
-		this.listaProdutos = listaProdutos;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public Cliente getCliente() {
@@ -59,27 +89,11 @@ public class Pedido {
 		this.cliente = cliente;
 	}
 
-	public List<Servico> getServico() {
-		return servico;
-	}
-
-	public void setServico(List<Servico> servico) {
-		this.servico = servico;
-	}
-
-	public Funcionario getMecanico() {
-		return mecanico;
-	}
-
-	public void setMecanico(Funcionario mecanico) {
-		this.mecanico = mecanico;
-	}
-
-	public String getDataInicio() {
+	public Date getDataInicio() {
 		return dataInicio;
 	}
 
-	public void setDataInicio(String dataInicio) {
+	public void setDataInicio(Date dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
@@ -99,12 +113,12 @@ public class Pedido {
 		this.prioridade = prioridade;
 	}
 
-	public String getNome() {
-		return nome;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	@Override
+	public String toString() {
+		return getId() + " - " + getPlaca() + " - " + getCliente();
 	}
-
 }

@@ -4,4 +4,9 @@
     <string name="app_name">ServicesControl</string>
     <string name="hello_world">Hello world!</string>
 
+    <string-array name="cargos_array">
+        <item>Atendente</item>
+        <item>Mecanico</item>
+    </string-array>
+
 </resources>

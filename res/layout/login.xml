@@ -25,15 +25,10 @@
                 android:layout_weight="0.5"
                 android:text="Usuario:" />
 
-            <EditText
-                android:id="@+id/campo_usuario"
+            <Spinner
+                android:id="@+id/funcionarios_spinner"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="..." >
-
-                <requestFocus />
-            </EditText>
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,17 +68,6 @@
                 android:background="#00A0B0"
                 android:padding="10dp"
                 android:text="Logar"
-                android:textColor="#fff" />
-
-            <Button
-                android:id="@+id/novo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="#2c71b5"
-                android:padding="10dp"
-                android:text="Novo"
                 android:textColor="#fff" />
         </LinearLayout>
     </LinearLayout>
